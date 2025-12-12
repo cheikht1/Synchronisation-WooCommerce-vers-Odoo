@@ -1,0 +1,12 @@
+# Environment variables
+.env
+.env*.local
+
+# Supabase
+supabase/.branches
+supabase/.temp
+supabase/tmp
+
+# OS metadata
+.DS_Store
+Thumbs.db
