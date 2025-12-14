@@ -1,8 +1,9 @@
-project_id = "your-project-id"
+project_id = "nqztdxdghjkgexqmcmgj"
 
 [functions.sync-orders]
 verify_jwt = false  # Allow invoking without a JWT (for cron)
 
-# Schedule the cron job (e.g., every 15 minutes)
+# Schedule the cron job (e.g., every 05 minutes)
 # Format: Minute Hour Day Month DayOfWeek
-schedule = "*/5 * * * *"
+# Schedule must be configured in Dashboard or SQL
+# schedule = "*/5 * * * *"

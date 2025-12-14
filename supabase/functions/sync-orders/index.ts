@@ -342,13 +342,17 @@ async function syncOrder(odoo: OdooClient, order: any) {
     }
 
     // Créer la commande dans Odoo
+    const rawDate = order.date_created || new Date().toISOString();
+    // Odoo expects "YYYY-MM-DD HH:MM:SS", removing "T" and "Z"
+    const odooDate = rawDate.replace("T", " ").replace("Z", "").split(".")[0];
+
     const orderValues = {
         partner_id: partnerId,
         origin: originTag,
         client_order_ref: String(wcId),
         state: "draft",
         order_line: orderLines,
-        date_order: order.date_created || new Date().toISOString(),
+        date_order: odooDate,
     };
 
     const newOrderId = await odoo.create("sale.order", orderValues);

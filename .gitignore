@@ -1,11 +1,17 @@
 # Environment variables
 .env
 .env*.local
+config.toml
+
+# Activate cron
+activate_cron.sql
 
 # Supabase
 supabase/.branches
 supabase/.temp
 supabase/tmp
+supabase/config.toml
+supabase/config*
 
 # OS metadata
 .DS_Store
