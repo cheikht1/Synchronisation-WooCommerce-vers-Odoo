@@ -3,7 +3,6 @@ project_id = "your-project-id"
 [functions.sync-orders]
 verify_jwt = false  # Allow invoking without a JWT (for cron)
 
-# Schedule the cron job (e.g., every 5 minutes)
-# Note: In local dev, cron is not simulated automatically by the CLI in the background usually,
-# you trigger it manually. But this config sets it up for production deployment.
- 
+# Schedule the cron job (e.g., every 15 minutes)
+# Format: Minute Hour Day Month DayOfWeek
+schedule = "*/5 * * * *"
